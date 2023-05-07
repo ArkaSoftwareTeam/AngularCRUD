@@ -1,0 +1,19 @@
+<menu class="container infoBase">
+  <div>
+    <h1>View Customer Information</h1>
+  </div>
+  <div class="card">
+    <div class="card-header">Show Details </div>
+    <div class="card-body myStyle">
+      <p>Customer Name : {{customer.firstName}} {{customer.lastName}}</p>
+      <p>Customer Date Of Birth : {{customer.dateOfBirth}}</p>
+      <p>Customer Phone Number : {{customer.phoneNumber}}</p>
+      <p>Customer Email Address : {{customer.email}}</p>
+      <p>Customer Bank Account Number : {{customer.bankAccountNumber}}</p>
+    </div>
+    <div class="card-footer">
+      <a class="btn btn-warning  m-3" (click)="goToCustomerListView()">Back To Customer List View</a>
+      <a class="btn btn-info m-3" (click)="goToCustomerAdd()">Back To Customer Customer Add</a>
+    </div>
+  </div>
+</menu>

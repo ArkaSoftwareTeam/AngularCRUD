@@ -1,0 +1,40 @@
+<main class="container baseListView" >
+  <div>
+    <table class="table caption-top customStyle">
+      <caption>Customers View:</caption>
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">DateOfBirth</th>
+        <th scope="col">Email</th>
+        <th scope="col">PhoneNumber</th>
+        <th scope="col">Bank Account Number</th>
+      </tr>
+      </thead>
+      <tbody class="table-group-divider">
+      <tr  *ngFor="let customer of customers">
+        <th scope="row">*</th>
+        <td>{{customer.firstName}}</td>
+        <td>{{customer.lastName}}</td>
+        <td>{{customer.dateOfBirth}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.phoneNumber}}</td>
+        <td>{{customer.bankAccountNumber}}</td>
+        <td>
+          <a class="btn btn-primary mx-2" routerLink="/viewCustomerInfo/{{customer.id}}/{{customer.firstName}} {{customer.lastName}}">View</a>
+          <a class="btn btn-success mx-2" routerLink="/customerEdit/{{customer.id}}/{{customer.firstName}} {{customer.lastName}}">Edit</a>
+          <Button class="btn btn-danger mx-2" (click)="DeleteCustomer(customer)">Delete</Button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div>
+      <a routerLink="/addCustomer" class="btn btn-primary">Create Customer</a>
+    </div>
+
+  </div>
+
+</main>
+

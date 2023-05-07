@@ -1,0 +1,65 @@
+<main>
+  <div class="row">
+    <div class="col-11 col-sm-10 col-md-8 col-lg-10">
+      <div class="card m-4">
+        <div class="card-header">Customer Info:</div>
+        <div class="card-body">
+          <form [formGroup]="CustomerEditForm" (ngSubmit)="OnUpdate()" class="row g-3 needs-validation">
+            <div class="mb-3">
+              <label for="FirstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="FirstName" aria-describedby="emailHelp" formControlName="firstName">
+              <div  *ngIf="CustomerEditForm.get('firstName').invalid && (CustomerEditForm.get('firstName').dirty || CustomerEditForm.get('firstName').touched)" class="mt-4" >
+                <span class="alert alert-danger" role="alert" *ngIf="CustomerEditForm.get('firstName').errors.required">First Name Is Required.</span>
+                <span class="alert alert-danger" role="alert" *ngIf="CustomerEditForm.get('firstName').errors.minlength">First Name Is Min Length 2 Char.</span>
+                <span class="alert alert-danger" role="alert" *ngIf="CustomerEditForm.get('firstName').errors.maxlength">First Name Is Max Length 50 Char.</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="LastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="LastName" aria-describedby="emailHelp" formControlName="lastName">
+              <div *ngIf="CustomerEditForm.get('lastName').invalid  && (CustomerEditForm.get('lastName').dirty || CustomerEditForm.get('lastName').touched) " class="mt-4" >
+                <span class="alert alert-danger" role="alert" *ngIf="CustomerEditForm.get('lastName').errors.required">Last Name Is Required.</span>
+                <span class="alert alert-danger" role="alert" *ngIf="CustomerEditForm.get('lastName').errors.minlength">Last Name Is Min Length 2 Char.</span>
+                <span class="alert alert-danger" role="alert" *ngIf="CustomerEditForm.get('lastName').errors.maxlength">Last Name Is Max Length 50 Char.</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="DateOfBirth" class="form-label">Date Of Birth</label>
+              <input type="date" class="form-control" id="DateOfBirth" aria-describedby="emailHelp" formControlName="dateOfBirth">
+              <div *ngIf="CustomerEditForm.get('dateOfBirth').invalid  && (CustomerEditForm.get('dateOfBirth').dirty || CustomerEditForm.get('dateOfBirth').touched)" class="mt-4" >
+                <span class="alert alert-danger" role="alert" *ngIf="CustomerEditForm.get('dateOfBirth').errors.required">Last Name Is Required.</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="PhoneNumber" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="PhoneNumber" aria-describedby="emailHelp" formControlName="phoneNumber">
+              <div *ngIf="CustomerEditForm.get('phoneNumber').invalid  && (CustomerEditForm.get('phoneNumber').dirty || CustomerEditForm.get('phoneNumber').touched)" class="mt-4">
+                <span class="alert alert-danger" role="alert" *ngIf="CustomerEditForm.get('phoneNumber').errors.required">Phone Number Is Required.</span>
+                <span class="alert alert-danger" role="alert" *ngIf="CustomerEditForm.get('phoneNumber').errors.pattern || CustomerEditForm.get('phoneNumber').errors.minlength">Phone Number Is Not Valid</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="Email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="Email" formControlName="email">
+              <div *ngIf="CustomerEditForm.get('email').invalid  && (CustomerEditForm.get('email').dirty || CustomerEditForm.get('email').touched)" class="mt-4">
+                <span class="alert alert-danger" role="alert" *ngIf="CustomerEditForm.get('email').errors.required">Last Name Is Required.</span>
+                <span class="alert alert-danger" role="alert" *ngIf="CustomerEditForm.get('email').errors.pattern">The Email Pattern Is Invalid.</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="BankAccountNumber" class="form-label">Bank Account Number</label>
+              <input type="number" class="form-control" id="BankAccountNumber" formControlName="bankAccountNumber">
+              <div *ngIf="CustomerEditForm.get('bankAccountNumber').invalid  && (CustomerEditForm.get('email').dirty || CustomerEditForm.get('bankAccountNumber').touched)" class="mt-4">
+                <!--                <span class="alert alert-danger" role="alert" *ngIf="customerForm.get('bankAccountNumber').errors.required">Bank Account Number Is Required.</span>-->
+                <span class="alert alert-danger" role="alert" *ngIf="CustomerEditForm.get('bankAccountNumber').errors.pattern">Bank Account Number Is Not Valid.</span>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="CustomerEditForm.invalid">Submits</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+

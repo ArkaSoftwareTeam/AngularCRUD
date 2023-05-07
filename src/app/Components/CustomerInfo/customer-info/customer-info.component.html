@@ -1,0 +1,64 @@
+<main>
+  <div class="row">
+    <div class="col-11 col-sm-10 col-md-8 col-lg-10">
+      <div class="card m-4">
+        <div class="card-header">Customer Info:</div>
+        <div class="card-body">
+          <form [formGroup]="customerForm" (ngSubmit)="onSubmitAdd()" class="row g-3 needs-validation">
+            <div class="mb-3">
+              <label for="FirstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="FirstName" aria-describedby="emailHelp" formControlName="firstName">
+              <div  *ngIf="customerForm.get('firstName').invalid && (customerForm.get('firstName').dirty || customerForm.get('firstName').touched)" class="mt-4">
+                <span class="alert alert-danger" role="alert" *ngIf="customerForm.get('firstName').errors.required">First Name Is Required.</span>
+                <span class="alert alert-danger" role="alert" *ngIf="customerForm.get('firstName').errors.minlength">First Name Is Min Length 2 Char.</span>
+                <span class="alert alert-danger" role="alert" *ngIf="customerForm.get('firstName').errors.maxlength">First Name Is Max Length 50 Char.</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="LastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="LastName" aria-describedby="emailHelp" formControlName="lastName">
+              <div *ngIf="customerForm.get('lastName').invalid  && (customerForm.get('lastName').dirty || customerForm.get('lastName').touched) " class="mt-4">
+                <span class="alert alert-danger" role="alert" *ngIf="customerForm.get('lastName').errors.required">Last Name Is Required.</span>
+                <span class="alert alert-danger" role="alert" *ngIf="customerForm.get('lastName').errors.minlength">Last Name Is Min Length 2 Char.</span>
+                <span class="alert alert-danger" role="alert" *ngIf="customerForm.get('lastName').errors.maxlength">Last Name Is Max Length 50 Char.</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="DateOfBirth" class="form-label">Date Of Birth</label>
+              <input type="date" class="form-control" id="DateOfBirth" aria-describedby="emailHelp" formControlName="dateOfBirth">
+              <div *ngIf="customerForm.get('dateOfBirth').invalid  && (customerForm.get('dateOfBirth').dirty || customerForm.get('dateOfBirth').touched)" class="mt-4">
+                <span class="alert alert-danger" role="alert" *ngIf="customerForm.get('dateOfBirth').errors.required">Last Name Is Required.</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="PhoneNumber" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="PhoneNumber" aria-describedby="emailHelp" formControlName="phoneNumber">
+              <div *ngIf="customerForm.get('phoneNumber').invalid  && (customerForm.get('phoneNumber').dirty || customerForm.get('phoneNumber').touched)" class="mt-4">
+                <span class="alert alert-danger" role="alert" *ngIf="customerForm.get('phoneNumber').errors.required">Phone Number Is Required.</span>
+                <span class="alert alert-danger" role="alert" *ngIf="customerForm.get('phoneNumber').errors.pattern || customerForm.get('phoneNumber').errors.minlength">Phone Number Is Not Valid</span>
+              </div>
+            </div>
+              <div class="mb-3">
+              <label for="Email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="Email" formControlName="email">
+                <div *ngIf="customerForm.get('email').invalid  && (customerForm.get('email').dirty || customerForm.get('email').touched)" class="mt-4">
+                  <span class="alert alert-danger" role="alert" *ngIf="customerForm.get('email').errors.required">Last Name Is Required.</span>
+                  <span class="alert alert-danger" role="alert" *ngIf="customerForm.get('email').errors.pattern">The Email Pattern Is Invalid.</span>
+                </div>
+              </div>
+            <div class="mb-3">
+              <label for="BankAccountNumber" class="form-label">Bank Account Number</label>
+              <input type="number" class="form-control" id="BankAccountNumber" formControlName="bankAccountNumber">
+              <div *ngIf="customerForm.get('bankAccountNumber').invalid  && (customerForm.get('email').dirty || customerForm.get('bankAccountNumber').touched)" class="mt-4">
+<!--                <span class="alert alert-danger" role="alert" *ngIf="customerForm.get('bankAccountNumber').errors.required">Bank Account Number Is Required.</span>-->
+                <span class="alert alert-danger" role="alert" *ngIf="customerForm.get('bankAccountNumber').errors.pattern">Bank Account Number Is Not Valid.</span>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="customerForm.invalid">Submits</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
