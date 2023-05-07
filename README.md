@@ -71,4 +71,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 The client management system is a powerful tool for businesses looking to manage their clients more efficiently. With its easy-to-use interface and powerful features, it's the perfect solution for any organization looking to improve their customer service.
 
-If you have any questions or feedback about the system, please contact Saeed Rajabi at saeedrajabi.dev@gmail.com.
+If you have any questions or feedback about the system, please contact Saeed Rajabi at saeed.ware0098@gmail.com || ArkaSoftware1@gmail.com
